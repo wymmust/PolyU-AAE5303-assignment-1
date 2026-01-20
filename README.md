@@ -8,18 +8,18 @@
 ## 1. System Information
 
 **Laptop model:**  
-_[Your laptop model, e.g., Dell XPS 15, MacBook Pro M1, etc.]_
+ROG Zephyrus G14
 
 **CPU / RAM:**  
-_[e.g., Intel Core i7-11800H, 16GB RAM]_
+AMD Ryzen 9 5900HS, 16GB RAM
 
 **Host OS:**  
-_[Windows 11 / macOS / Ubuntu 22.04]_
+Windows 11
 
 **Linux/ROS environment type:**  
 _[Choose one:]_
 - [ ] Dual-boot Ubuntu
-- [ ] WSL2 Ubuntu
+- [✓] WSL2 Ubuntu
 - [ ] Ubuntu in VM (UTM/VirtualBox/VMware/Parallels)
 - [ ] Docker container
 - [ ] Lab PC
