@@ -31,20 +31,38 @@ _[Choose one:]_
 
 ### 2.1 Steps Taken
 
-Describe briefly how you created/activated your Python environment:
+Describe briefly how you created/activated your Python environment: I created an isolated Python virtual environment using Python’s built-in `venv` module to avoid conflicts with global packages
 
 **Tool used:**  
-_[venv / conda / system Python]_
+- **Operating System:** Windows 11 with WSL2
+- **Linux Distribution:** Ubuntu 22.04 LTS
+- **ROS Distribution:** ROS 2 Humble Hawksbill
+- **Python:** Python 3.10.12
+- **ROS Build Tool:** colcon
+- **Package Management:** apt, pip
+- **Python Libraries:**
+  - NumPy
+  - SciPy
+  - Matplotlib
+  - OpenCV
+  - Open3D
+- **Version Control:** Git and GitHub
+- **Terminal Environment:** Ubuntu terminal (WSL2)
+- **Text Editor:** Visual Studio Code
+- **Generative AI Tool:** ChatGPT (used for troubleshooting and guidance)
 
 **Key commands you ran:**
-```bash
-python3 -m venv .venv
+```python3 -m venv .venv
 source .venv/bin/activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 **Any deviations from the default instructions:**  
-_[Describe any changes you made, or write "None"]_
+Minor deviations were required due to network and proxy restrictions in the WSL environment.  
+Specifically, `rosdep update` could not be completed because GitHub raw URLs were inaccessible.  
+Instead, required ROS 2 dependencies were installed manually using `apt`, and the workspace was successfully built using `colcon build`.  
+All functional checks and runtime verification were completed as required._
 
 ### 2.2 Test Results
 
