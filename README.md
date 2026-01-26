@@ -147,13 +147,20 @@ python scripts/test_open3d_pointcloud.py
 
 **Output:**
 ```
-[Paste your actual terminal output here]
+ℹ️ Loading /home/wym/aae5303-env-check/data/sample_pointcloud.pcd ...
+✅ Loaded 8 points.
+   • Centroid: [0.025 0.025 0.025]
+   • Axis-aligned bounds: min=[0. 0. 0.], max=[0.05 0.05 0.05]
+✅ Filtered point cloud kept 7 points.
+✅ Wrote filtered copy with 7 points to /home/wym/aae5303-env-check/data/sample_pointcloud_copy.pcd
+   • AABB extents: [0.05 0.05 0.05]
+   • OBB  extents: [0.08164966 0.07071068 0.05773503], max dim 0.0816 m
+🎉 Open3D point cloud pipeline looks good.
 ```
 
 **Screenshot:**  
-_[Include one screenshot showing both tests passing]_
+<img width="1355" height="1262" alt="967ccdf10579f6a2233ad9a6b23b8e6f" src="https://github.com/user-attachments/assets/62703d6e-538a-49ec-965e-3cfa53c8a32a" />
 
-![Python Tests Passing](path/to/your/screenshot.png)
 
 ---
 
