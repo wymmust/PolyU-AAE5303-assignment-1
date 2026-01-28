@@ -367,7 +367,11 @@ Short but thoughtful:
 
 **Your reflection:**
 
-_[Write your 3-5 sentence reflection here]_
+This assignment helped me understand how different components of a robotics development environment—Python, ROS 2, system dependencies, and networking—interact with each other.
+I was surprised by how non-obvious issues such as proxy settings and Python virtual environments could silently affect ROS 2 build and runtime behavior.
+Through debugging these problems, I learned to rely more on reading error messages carefully and validating assumptions step by step instead of repeatedly retrying commands.
+Next time, I would set up the environment more systematically and document configuration changes earlier to avoid repeated troubleshooting.
+Overall, I now feel significantly more confident in diagnosing and resolving ROS 2 and Python environment issues independently.
 
 ---
 
@@ -376,13 +380,13 @@ _[Write your 3-5 sentence reflection here]_
 ✅ **I confirm that I performed this setup myself and all screenshots/logs reflect my own environment.**
 
 **Name:**  
-_[Your name]_
+WU Yumeng
 
 **Student ID:**  
-_[Your student ID]_
+25041983g
 
 **Date:**  
-_[Date of submission]_
+2026/1/28
 
 ---
 
@@ -390,13 +394,13 @@ _[Date of submission]_
 
 Before submitting, ensure you have:
 
-- [ ] Filled in all system information
-- [ ] Included actual terminal outputs (not just screenshots)
-- [ ] Provided at least 2 screenshots (Python tests + ROS talker/listener)
-- [ ] Documented 2–3 real problems with solutions
-- [ ] Completed the AI usage section with exact prompts
-- [ ] Written a thoughtful reflection (3–5 sentences)
-- [ ] Signed the declaration
+- [✓] Filled in all system information
+- [✓] Included actual terminal outputs (not just screenshots)
+- [✓] Provided at least 2 screenshots (Python tests + ROS talker/listener)
+- [✓] Documented 2–3 real problems with solutions
+- [✓] Completed the AI usage section with exact prompts
+- [✓] Written a thoughtful reflection (3–5 sentences)
+- [✓] Signed the declaration
 
 ---
 
