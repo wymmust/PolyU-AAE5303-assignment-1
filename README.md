@@ -241,43 +241,45 @@ _[Include one screenshot showing talker + listener running]_
 
 > **Note:** Write 2–3 issues, even if small. This section is crucial — it demonstrates understanding and problem-solving.
 
-### Issue 1: colcon build failed with ModuleNotFoundError: No module named 'catkin_pkg
+### Issue 1: Colcon build failed with ModuleNotFoundError: No module named 'catkin_pkg
 
 **Cause / diagnosis:**  
-_The error occurred because colcon build was executed while a Python virtual environment (.venv) was active.
+The error occurred because colcon build was executed while a Python virtual environment (.venv) was active.
 As a result, ROS 2 build scripts were executed using the virtual environment’s Python interpreter, which did not include the catkin_pkg dependency required by ament_cmake.
 
 **Fix:**  
-_I deactivated the Python virtual environment before building the ROS 2 workspace and then rebuilt the workspace using the system Python environment.
+I deactivated the Python virtual environment before building the ROS 2 workspace and then rebuilt the workspace using the system Python environment.
 
 ```bash
-[deactivate
+deactivate
 cd ros2_ws
 rm -rf build install log
 source /opt/ros/humble/setup.bash
 colcon build
-]
 ```
 
 **Reference:**  
-_[Official ROS 2 documentation and ChatGPT assistance.]_
+Official ROS 2 documentation and ChatGPT assistance.
 
 ---
 
-### Issue 2: [Another real error or roadblock]
+### Issue 2: Ros2 run env_check_pkg listener.py returned No executable found
 
 **Cause / diagnosis:**  
-_[Explain what you think caused it]_
+The package env_check_pkg does not register individual executables for ros2 run.
+Instead, both the talker and listener nodes are designed to be launched together using a ROS 2 launch file.
 
 **Fix:**  
-_[The exact command/config change you used to solve it]_
+I used the provided launch file to start both nodes simultaneously, which successfully verified message communication between the talker and listener.
 
 ```bash
-[Your fix command/code here]
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch env_check_pkg env_check.launch.py
 ```
 
 **Reference:**  
-_[Official ROS docs? StackOverflow? AI assistant? Something else?]_
+env_check_pkg repository documentation and ROS 2 launch system documentation.
 
 ---
 
