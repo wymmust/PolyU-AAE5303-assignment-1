@@ -241,20 +241,26 @@ _[Include one screenshot showing talker + listener running]_
 
 > **Note:** Write 2–3 issues, even if small. This section is crucial — it demonstrates understanding and problem-solving.
 
-### Issue 1: [Write the exact error message or problem]
+### Issue 1: colcon build failed with ModuleNotFoundError: No module named 'catkin_pkg
 
 **Cause / diagnosis:**  
-_[Explain what you think caused it]_
+_The error occurred because colcon build was executed while a Python virtual environment (.venv) was active.
+As a result, ROS 2 build scripts were executed using the virtual environment’s Python interpreter, which did not include the catkin_pkg dependency required by ament_cmake.
 
 **Fix:**  
-_[The exact command/config change you used to solve it]_
+_I deactivated the Python virtual environment before building the ROS 2 workspace and then rebuilt the workspace using the system Python environment.
 
 ```bash
-[Your fix command/code here]
+[deactivate
+cd ros2_ws
+rm -rf build install log
+source /opt/ros/humble/setup.bash
+colcon build
+]
 ```
 
 **Reference:**  
-_[Official ROS docs? StackOverflow? AI assistant? Something else?]_
+_[Official ROS 2 documentation and ChatGPT assistance.]_
 
 ---
 
