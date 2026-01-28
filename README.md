@@ -310,14 +310,20 @@ Choose one of the issues above and document how you used AI to solve it.
 
 **Your prompt:**
 ```
-[Copy-paste your actual message to the AI, not a summary]
+When running git clone inside WSL, the command keeps hanging at "Cloning into ..." and eventually fails with:
+fatal: unable to access 'https://github.com/...': Failed to connect to 172.24.208.1:7897 (Connection timed out).
+However, ping github.com works normally. Why does this happen and how can I fix it?
+
 ```
 
 ### 5.2 Key helpful part of the AI's answer
 
 **AI's response (relevant part only):**
 ```
-[Quote only the relevant part of the AI's answer]
+This issue is caused by proxy configuration. Although basic network connectivity works, Git’s HTTPS traffic is being routed through a proxy (172.24.208.1:7897) that is not reachable from WSL.
+You can diagnose this by checking environment variables such as http_proxy, https_proxy, and ALL_PROXY.
+Temporarily unsetting these proxy variables in the terminal and then re-running git clone should resolve the problem.
+
 ```
 
 ### 5.3 What you changed or ignored and why
@@ -328,18 +334,25 @@ Explain briefly:
 - Did you double-check with official docs?
 
 **Your explanation:**  
-_[Write your analysis here]_
+I followed the AI’s diagnosis that the failure was caused by inherited proxy environment variables inside WSL.
+Before applying the fix, I verified the hypothesis by running env | grep -i proxy and confirmed that http_proxy/https_proxy/ALL_PROXY were set to an unreachable proxy address.
+I did not change any system-wide proxy settings permanently; instead, I used unset in the current terminal session to avoid unexpected side effects on other tools.
+After unsetting the variables, I re-ran git clone and confirmed it completed successfully.
 
 ### 5.4 Final solution you applied
 
 Show the exact command or file edit that fixed the problem:
 
 ```bash
-[Your final command/code here]
+env | grep -i proxy
+unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY all_proxy ALL_PROXY
+git clone --depth 1 https://github.com/qmohsu/PolyU-AAE5303-env-smork-test.git aae5303-env-check
+
 ```
 
 **Why this worked:**  
-_[Brief explanation]_
+Because Git was previously forced to route HTTPS traffic through a proxy (172.24.208.1:7897) that was not reachable from WSL, causing a timeout.
+Unsetting the proxy environment variables allowed Git to connect directly to GitHub and complete the clone operation.
 
 ---
 
