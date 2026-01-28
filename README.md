@@ -283,20 +283,27 @@ env_check_pkg repository documentation and ROS 2 launch system documentation.
 
 ---
 
-### Issue 3 (Optional): [Title]
+### Issue 3 (Optional): python command not found when running test scripts
 
 **Cause / diagnosis:**  
-_[Explain what you think caused it]_
+On Ubuntu 22.04, the python command is not available by default and only python3 is provided.
+When following the assignment instructions and running commands such as
+python scripts/test_python_env.py, the system reported command not found, even though Python 3 was correctly installed.
 
 **Fix:**  
-_[The exact command/config change you used to solve it]_
+I activated the project’s Python virtual environment, which provides a local python executable mapped to Python 3.
+After activating the virtual environment, the test scripts could be executed successfully using the same commands specified in the assignment template
 
 ```bash
-[Your fix command/code here]
+cd ~/aae5303-env-check
+source .venv/bin/activate
+python scripts/test_python_env.py
+python scripts/test_open3d_pointcloud.py
+
 ```
 
 **Reference:**  
-_[Official ROS docs? StackOverflow? AI assistant? Something else?]_
+Ubuntu 22.04 Python documentation and ChatGPT assistance.
 
 ---
 
